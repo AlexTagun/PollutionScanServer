@@ -22,9 +22,12 @@ def calculate_value(prevPoint, currentPoint) :
     prevTime = prevPoint.get_time()
     currentTime =  currentPoint.get_time()
 
+    print("currentTime = ", currentTime)
+    print("prevTime = ", prevTime)
+
     timeDiff = (currentTime - prevTime)/ TIME_STEP
     print("timeDiff = ", timeDiff)
     
-    value = currentPoint.get_value() * timeDiff
+    value = int(currentPoint.get_value()) * timeDiff
     
     return value

@@ -44,6 +44,7 @@ def get_nearest_points(x, y):
     
     
     for i in range(0, len(points)):
+        if points[i].value == "-": continue
         dist = math.sqrt(pow(points[i].x - x, 2) + pow(points[i].y - y, 2))
         if dist < min_dist:
             min_dist = dist
@@ -64,4 +65,8 @@ def get_recent_point(x, y, time):
             min_time = abs(time - nearest_points[i].time)
             point_index = i
     print(point_index)
-    return  nearest_points[point_index]
+    
+    nearest_point = nearest_points[point_index]
+    nearest_point.time = time
+    
+    return  nearest_point

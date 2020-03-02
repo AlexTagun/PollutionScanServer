@@ -14,3 +14,6 @@ class Point:
 
 def get_point_from_json(json_object):
         return Point(json_object['x'], json_object['y'], json_object['value'], json_object['time'])
+
+def get_user_point_from_json(json_object):
+    return json_object['x'], json_object['y'], json_object['time']
