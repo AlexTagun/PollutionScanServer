@@ -29,7 +29,8 @@ def get_points():
         coordinates = point["g"]
         value = point["aqi"]
         coordinates = float(coordinates[0]) , float(coordinates[1])
-        points.append(Point(float(coordinates[0]), float(coordinates[1]), value, time.gmtime()))
+        timeInMilliseconds =  int(round(time.time() * 1000))
+        points.append(Point(float(coordinates[0]), float(coordinates[1]), value, timeInMilliseconds))
         
     return points
     
