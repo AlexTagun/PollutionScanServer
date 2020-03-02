@@ -53,3 +53,7 @@ def get_value(coordinates_data):
             min_dist = dist
             point_index = i
     return points[point_index][1]
+
+def get_point_from_client(jsonData) :
+    
+    return points

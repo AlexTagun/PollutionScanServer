@@ -4,12 +4,8 @@ TIME_STEP = 1000 * 60
 
 def analyze(points) :
     
-    startTime = points[0]
-    endTime = points[len(points) - 1]
-    duration = endTime - startTime
-    
     if(len(points) == 1) :
-        return points[0].get_value(), duration
+        return points[0].get_value()
     
     totalValue = 0
 
@@ -20,7 +16,7 @@ def analyze(points) :
         
         totalValue += calculate_value(prevPoint, currentPoint)
         
-    return totalValue,duration
+    return totalValue
 
 def calculate_value(prevPoint, currentPoint) :
     prevTime = prevPoint.get_time()
